@@ -13,7 +13,7 @@
         required autocomplete="off">
         </b-form-textarea>
       </b-form-group>
-      <b-button type="submite" variant="outline-primary" @click="saveTask">Salvar</b-button>
+      <b-button class="save-button" type="submite" @click="saveTask">Salvar</b-button>
     </b-form>
   </div>
 </template>
@@ -64,3 +64,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.container .save-button {
+  background-color:#0437F2;
+}
+.container .save-button:hover {
+  background-color: #191970;
+}
+</style>
