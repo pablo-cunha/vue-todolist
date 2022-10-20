@@ -1,5 +1,13 @@
 <template>
   <div class="container mt-2">
+    <div v-if="this.tasks.length < 1">
+      <b-card title="Sem tarefas no momento" class="card mb-2">
+        <b-card-text>Clique no botão abaixo para criar a primeira tarefa.</b-card-text>
+        <a href="/form">
+          <b-button class="edit-button">Criar Tarefa</b-button>
+        </a>
+      </b-card>
+    </div>
     <div v-for="(task, index) in tasks" :key="index">
       <b-card :title="task.subject" class="card mb-2">
         <b-card-text>{{ task.description }}</b-card-text>
