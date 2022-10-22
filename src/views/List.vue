@@ -4,15 +4,15 @@
       <b-card title="Sem tarefas no momento" class="card mb-2">
         <b-card-text>Clique no botão abaixo para criar a primeira tarefa.</b-card-text>
         <a href="/form">
-          <b-button class="edit-button">Criar Tarefa</b-button>
+          <b-button variant="info">Criar Tarefa</b-button>
         </a>
       </b-card>
     </div>
     <div v-for="(task, index) in tasks" :key="index">
       <b-card :title="task.subject" class="card mb-2">
         <b-card-text>{{ task.description }}</b-card-text>
-        <b-button class="edit-button mr-2" @click="editTask(index)">Editar</b-button>
-        <b-button class="delete-button mr-2" @click="deleteTask(task, index)">Excluir</b-button>
+        <b-button class="mr-2" variant="info" @click="editTask(index)">Editar</b-button>
+        <b-button class="mr-2" variant="danger" @click="deleteTask(task, index)">Excluir</b-button>
       </b-card>
     </div>
     <div>
@@ -21,8 +21,8 @@
           Deseja deletar a tarefa "{{ taskSelected.subject }}"?
         </div>
         <div class="mt-3 d-flex justify-content-end">
-          <b-button class="cancel-button mr-2" @click="hideModal">Cancelar</b-button>
-          <b-button class="delete-button mr-2" @click="confirmDelete">Excluir</b-button>
+          <b-button class="mr-2" variant="info" @click="hideModal">Cancelar</b-button>
+          <b-button class="mr-2" variant="danger" @click="confirmDelete">Excluir</b-button>
         </div>
       </b-modal>
     </div>
@@ -67,29 +67,5 @@ export default {
 .card {
   color: #ffffff;
   background: linear-gradient(to right, #5c258d, #4389a2);
-}
-.card .edit-button {
-  background-color:#0437F2;
-}
-.card .edit-button:hover {
-  background-color: #191970;
-}
-.card .delete-button {
-  background-color: #e8000d;
-}
-.card .delete-button:hover {
-  background-color: #cf1020;
-}
-.modal .cancel-button {
-  background-color:#0437F2;
-}
-.modal .cancel-button:hover {
-  background-color: #191970;
-}
-.modal .delete-button {
-  background-color: #e8000d;
-}
-.modal .delete-button:hover {
-  background-color: #cf1020;
 }
 </style>
